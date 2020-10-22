@@ -3,6 +3,7 @@ const { request } = require("../app");
 const db = require("../config/database");
 
 
+
 exports.createCliente = async(req,res) => {
   const { nome, email, senha } = req.body;
   const { rows } = await db.query(
