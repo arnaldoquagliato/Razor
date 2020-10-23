@@ -39,11 +39,11 @@ exports.updateClienteById = async(req,res) => {
     [nome, email, senha, cliente_id]
   );
 
-  res.status(200).send({ message:"deu bom" });
+  res.status(200).send({ message:"Alteração foi um sucesso" });
 };
 
 exports.deleteClienteById = async(req,res) => {
   const cliente_id = parseInt(req.params.id);
   await db.query('DELETE FROM cliente WHERE cliente_id = $1', [cliente_id]);
-  res.status(200).send({ message:'deletado', cliente_id });
+  res.status(200).send({ message:'Cliente deletado', cliente_id });
 }

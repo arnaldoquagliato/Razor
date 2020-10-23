@@ -38,11 +38,11 @@ exports.updateProfissionalById = async(req,res) => {
     [nome, email, senha, id_profissional]
   );
 
-  res.status(200).send({ message:"deu bom" });
+  res.status(200).send({ message:"Alteração foi um sucesso" });
 };
 
 exports.deleteProfissionalById = async(req,res) => {
   const id_profissional = parseInt(req.params.id);
   await db.query('DELETE FROM profissional WHERE id_profissional = $1', [id_profissional]);
-  res.status(200).send({ message:'deletado', id_profissional });
+  res.status(200).send({ message:'Profissional deletado!', id_profissional });
 }
